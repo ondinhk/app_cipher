@@ -1,0 +1,133 @@
+<!-- <<<<<<< HEAD -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Cipher Application</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body style="background: #B5EAEA">
+    <div class="container">
+        <div class=" text-center mt-5 mb-5 ">
+            <h1>Cipher Application</h1>
+        </div>
+        <div class="row ">
+            <div class="col-lg-12 mx-auto">
+                <div class="card mt-2 mx-auto p-4 bg-light">
+                    <div class="card-body bg-light">
+                        <div class="container">
+                            <form id="contact-form" role="form" action="#" method="post">
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-md-8 col-8">
+                                            <div class="form-group">
+                                                <h5>Input text</h5>
+                                                <input id="input_text" type="text" name="input_text"
+                                                    class="form-control" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-2">
+                                            <div class="form-group">
+                                                <h5>Choose cipher</h5>
+                                                <select name="cipher" id="cipher" class="form-control"
+                                                    onchange="changeOption()">
+                                                    <option value=0>Mã Reverse</option>
+                                                    <option value=1>Mã Ceasar</option>
+                                                    <option value=2>Mã Đổi Chổ</option>
+                                                    <option value=3>Mã Thay Thế</option>
+                                                    <option value=4>Mã Affine</option>
+                                                    <option value=5>Mã Vigenere</option>
+                                                    <option value=6>Mã HILL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-2 d-none" id="form_key">
+                                            <div class="form-group">
+                                                <h5>Key:</h5>
+                                                <input id="input_key" type="number" name="input_key"
+                                                    class="form-control" required="required" placeholder="k=0,1,2..."
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-2 d-none" id="form_key_doicho">
+                                            <div class="form-group">
+                                                <h5>Key:</h5>
+                                                <input id="input_key_doicho" type="text" name="input_key_doicho"
+                                                    class="form-control" required="required" placeholder="k=12345..."
+                                                    value="1234">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 col-8 d-none" id="form_key_thaythedon">
+                                            <div class="form-group">
+                                                <h5>Enter 26 ALPHA key (blank for random key):</h5>
+                                                <input id="input_key_doicho" type="text" name="input_key_thaythedon"
+                                                    class="form-control" placeholder="Example: ABCD..." value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 col-8 d-none" id="form_key_vigenere">
+                                            <div class="form-group">
+                                                <h5>Enter Key:</h5>
+                                                <input id="input_key_vigenere" type="text" name="input_key_vigenere"
+                                                    class="form-control" placeholder="Example: CIPHER" value=""
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-3">
+                                        <div class="form-check mr-5 ml-3">
+                                            <input class="form-check-input" type="radio" name="option" id="Encrypt"
+                                                checked value="0">
+                                            <label class="form-check-label" for="Encrypt">
+                                                Encrypt
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="option" id="Decrypt"
+                                                value="1">
+                                            <label class="form-check-label" for="Decrypt">
+                                                Decrypt
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p><input type="submit" class="btn btn-success" value="Translate"></p>
+                            </form>
+                            <!-- Result -->
+                            <div>
+                                <div class="mt-5">
+                                    <h3>Ciphert: </h3>
+                                    <p class="result">{{ cipher }}</p>
+                                </div>
+                                <div class="mt-5">
+                                    <h3>Plain text: </h3>
+                                    <p class="result">{{ input }}</p>
+                                </div>
+                                <div class="mt-5">
+                                    <h3>Ciphertext:</h3>
+                                    <p class="result">{{ result }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.8 -->
+            </div> <!-- /.row-->
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
