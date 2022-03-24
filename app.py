@@ -16,7 +16,6 @@ arr_cipher = ["Reverse Cipher",
 def hello_world():
     return render_template("index.html")
 
-
 @app.route('/', methods=['POST'])
 def translate():
     global result
