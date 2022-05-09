@@ -34,11 +34,12 @@
                                                     class="form-control" required="required">
                                             </div>
                                         </div>
-                                        <div class="col-md-2 col-2">
+                                        <div class="col-md-3 col-3">
                                             <div class="form-group">
                                                 <h5>Choose cipher</h5>
                                                 <select name="cipher" id="cipher" class="form-control"
                                                     onchange="changeOption()">
+                                                    <option disabled style="text-alin:center, margin-top:5px">MÃ BÍ MẬT</option>
                                                     <option value=0>Mã Reverse</option>
                                                     <option value=1>Mã Ceasar</option>
                                                     <option value=2>Mã Đổi Chổ</option>
@@ -46,6 +47,8 @@
                                                     <option value=4>Mã Affine</option>
                                                     <option value=5>Mã Vigenere</option>
                                                     <option value=6>Mã HILL</option>
+                                                    <option disabled style="text-alin:center">MÃ CÔNG KHAI</option>
+                                                    <option value=7>Mã RSA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -70,7 +73,7 @@
                                         <div class="col-md-8 col-8 d-none" id="form_key_thaythedon">
                                             <div class="form-group">
                                                 <h5>Enter 26 ALPHA key (blank for random key):</h5>
-                                                <input id="input_key_doicho" type="text" name="input_key_thaythedon"
+                                                <input id="input_key_thaythedon" type="text" name="input_key_thaythedon"
                                                     class="form-control" placeholder="Example: ABCD..." value="">
                                             </div>
                                         </div>
@@ -80,8 +83,17 @@
                                             <div class="form-group">
                                                 <h5>Enter Key:</h5>
                                                 <input id="input_key_vigenere" type="text" name="input_key_vigenere"
-                                                    class="form-control" placeholder="Example: CIPHER" value=""
+                                                    class="form-control" placeholder="Example: CIPHER" value="HELP"
                                                     required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 col-8 d-none" id="form_key_RSA">
+                                            <div class="form-group">
+                                                <h5>Enter Key Public:</h5>
+                                                <textarea id="input_key_RSA" type="text" name="input_key_RSA"
+                                                    class="form-control" cols="100" style="height:150px"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -90,14 +102,14 @@
                                             <input class="form-check-input" type="radio" name="option" id="Encrypt"
                                                 checked value="0">
                                             <label class="form-check-label" for="Encrypt">
-                                                Encrypt
+                                                Mã hóa
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="option" id="Decrypt"
                                                 value="1">
                                             <label class="form-check-label" for="Decrypt">
-                                                Decrypt
+                                                Giải mã
                                             </label>
                                         </div>
                                     </div>
@@ -106,17 +118,19 @@
                             </form>
                             <!-- Result -->
                             <div>
+
                                 <div class="mt-5">
-                                    <h3>Ciphert: </h3>
-                                    <p class="result">{{ cipher }}</p>
-                                </div>
-                                <div class="mt-5">
-                                    <h3>Plain text: </h3>
+                                    <h3>Input: </h3>
                                     <p class="result">{{ input }}</p>
                                 </div>
                                 <div class="mt-5">
-                                    <h3>Ciphertext:</h3>
+                                    <h3>Output:</h3>
                                     <p class="result">{{ result }}</p>
+                                </div>
+                                 <div class="mt-5">
+                                    <h3>Key: </h3>
+                                    <p class="result">{{ cipher }}</p>
+                                    <p class="result">{{ private }}</p>
                                 </div>
                             </div>
                         </div>

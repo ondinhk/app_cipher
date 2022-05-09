@@ -31,3 +31,11 @@ def decrypt(ciphertext, key):
             except IndexError:
                 continue
     return plaintext
+
+
+if __name__ == '__main__':
+    txt = "ONDINHKHANG"
+    inn = encrypt(txt,"1234")
+    out = decrypt(inn,"1234")
+    print(inn)
+    print(out)

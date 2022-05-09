@@ -75,7 +75,6 @@ def translate():
             result = main.en_hill(text, key_vigenere)
             arr_cipher[6] = "Mã Hill, Key=" + key_vigenere
 
-
     # Decrypt
     elif option == 1:
         # Reverse:
@@ -103,6 +102,7 @@ def translate():
         if cipher == 6:
             result = main.de_hill(text, key_vigenere)
             arr_cipher[6] = "Mã Hill, Key=" + key_vigenere
+
     return render_template("index.html", cipher=arr_cipher[cipher], result=result, input=text)
 
 

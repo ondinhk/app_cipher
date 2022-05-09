@@ -5,6 +5,7 @@ function changeOption() {
     let form_key_doicho = document.getElementById("form_key_doicho");
     let form_key_thaythedon = document.getElementById("form_key_thaythedon");
     let form_key_vigenere = document.getElementById("form_key_vigenere");
+    let form_key_RSA = document.getElementById("form_key_RSA");
     //    Key ceasar
     if (selectedValue == 1) {
         form_key.classList.remove("d-none");
@@ -28,5 +29,11 @@ function changeOption() {
         form_key_vigenere.classList.remove("d-none");
     } else {
         form_key_vigenere.classList.add("d-none");
+    }
+    //    key form_key_RSA
+    if (selectedValue == 7) {
+        form_key_RSA.classList.remove("d-none");
+    } else {
+        form_key_RSA.classList.add("d-none");
     }
 }

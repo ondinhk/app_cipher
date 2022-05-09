@@ -5,7 +5,6 @@ import func.ThayTheDon_Cipher as thaythe
 import func.MaAffine as affine
 import func.MaVigenere as vigenere
 import func.MaHill as hill
-
 # Reverse:
 def en_reverse(text):
     return reverse.encrypt(text)
@@ -69,9 +68,10 @@ def de_vigenere(text, key):
 def en_hill(text, key):
     return hill.encrypt(text, key=key)
 
-
 def de_hill(text, key):
     return hill.decrypt(text, key=key)
+
+
 if __name__ == '__main__':
     text = 'ondinhkhang'
     text = text.upper()
