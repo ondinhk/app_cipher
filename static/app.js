@@ -31,9 +31,15 @@ function changeOption() {
         form_key_vigenere.classList.add("d-none");
     }
     //    key form_key_RSA
-    if (selectedValue == 7) {
-        form_key_RSA.classList.remove("d-none");
-    } else {
-        form_key_RSA.classList.add("d-none");
+    if (selectedValue == 8) {
+        let form = document.getElementById('contact-form').submit();
+
     }
+}
+
+function createKey(){
+    let input = document.getElementById('input_key');
+    input.value = 0;
+    console.log(input.value)
+    let form = document.getElementById('contact-form').submit();
 }

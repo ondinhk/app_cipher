@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            height: 100vh;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mid {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .link {
+            margin-bottom: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mid">
+        <div class="link">
+            <a href="{{ linkPrivate[0] }}" class="link-info">{{ linkPrivate[1] }}</a> </br>
+            <a href="{{ linkPublic[0] }}" class="link-success">{{ linkPublic[1] }}</a> </br>
+        </div>
+            <a href="/" class="link-success">Quay lại trang chính</a> </br>
+    </div>
+</body>
+
+</html>

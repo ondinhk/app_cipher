@@ -47,8 +47,9 @@
                                                     <option value=4>Mã Affine</option>
                                                     <option value=5>Mã Vigenere</option>
                                                     <option value=6>Mã HILL</option>
+                                                    <option value=7>Mã Base64</option>
                                                     <option disabled style="text-alin:center">MÃ CÔNG KHAI</option>
-                                                    <option value=7>Mã RSA</option>
+                                                    <option value=8 onclick="this.form.submit()">Mã RSA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -141,7 +142,6 @@
     </div>
 
     <script src="{{url_for('static', filename='app.js')}}"></script>
-    <script src="./app.js"></script>
 </body>
 
 </html>
